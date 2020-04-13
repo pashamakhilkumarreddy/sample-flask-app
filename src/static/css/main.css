@@ -85,10 +85,6 @@ header {
   font-size: 0.9rem;
 }
 
-form.search-form {
-  width: inherit;
-}
-
 .search-results {
   display: flex;
   flex-flow: column nowrap;

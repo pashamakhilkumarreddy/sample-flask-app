@@ -39,6 +39,8 @@
           }
           document.querySelector('.search-results').innerHTML = results;
         }
+      }).catch(err => {
+        console.error(err);
       });
   })
 </script>

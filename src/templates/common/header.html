@@ -5,31 +5,33 @@
         <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
       </a>
       <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-        data-target="navbarBasicExample">
+        data-target="main-navbar">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
     </div>
 
-    <div class="navbar-menu">
+    <div id="main-navbar" class="navbar-menu">
       <div class="navbar-start">
         <a href="/" class="navbar-item">
           Home
         </a>
       </div>
-      <div class="navbar-end">
+      <div class="navbar-end is-flex">
         <div class="navbar-item">
-          <div class="buttons">
-            <a href="/register" class="button is-primary">
-              <strong>Register</strong>
-            </a>
-            <a href="/login" class="button is-light">
-              Log in
-            </a>
-          </div>
+          <a href="/register" class="button is-primary">
+            <strong>Register</strong>
+          </a>
+        </div>
+        <div class="navbar-item">
+          <a href="/login" class="button is-light">
+            Log in
+          </a>
         </div>
       </div>
+    </div>
+    </div>
     </div>
   </nav>
 </header>
