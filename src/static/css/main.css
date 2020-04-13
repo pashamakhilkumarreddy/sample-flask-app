@@ -84,3 +84,26 @@ header {
 .help {
   font-size: 0.9rem;
 }
+
+form.search-form {
+  width: inherit;
+}
+
+.search-results {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0;
+  max-height: 29rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.search-result {
+  font-size: 1rem;
+  border: 1px solid #d2d0d0;
+  width: -webkit-fill-available;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+}

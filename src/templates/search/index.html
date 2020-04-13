@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Search</title>
+{% endblock %}
+
+{% block body %}
+<div class="columns is-vcentered is-centered is-mobile mt-10">
+  <div class="column is-three-quarters-mobile is-two-thirds-tablet is-two-thirds-desktop 
+    is-two-quarters-widescreen is-two-quarters-fullhd">
+    <form action="/search" method="POST" class="search-form">
+      <div class="field has-addons">
+        <div class="control">
+          <input id="search" class="input" type="text" name="search" placeholder="Search">
+        </div>
+        <div class="control">
+          <a class="button is-info">
+            Search
+          </a>
+        </div>
+      </div>
+      <div class="search-results">
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock body %}
+{% block script %}
+<script>
+  const search = document.querySelector('#search');
+  search.addEventListener('keyup', function (e) {
+    const searchValue = search.value;
+    fetch(`http://127.0.0.1:5000/search?query=${searchValue}`).then(data => data.json()).then(
+      json => {
+        if (json) {
+          let results = '';
+          for (word of json.data) {
+            results += `<div class="search-result">${word}</div>`;
+          }
+          document.querySelector('.search-results').innerHTML = results;
+        }
+      });
+  })
+</script>
+{% endblock %}

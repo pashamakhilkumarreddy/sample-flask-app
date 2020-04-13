@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, jsonify
 import os
 import smtplib
 import csv
@@ -16,6 +16,12 @@ PASSWORD = os.getenv('PASSWORD')
 EMAIL_PORT = int(os.getenv('EMAIL_PORT'))
 
 EMAIL_HOST = os.getenv('EMAIL_HOST')
+
+WORDS = []
+
+with open('large', 'r') as file:
+    for line in file.readlines():
+        WORDS.append(line.rstrip())
 
 @app.route("/")
 def index():
@@ -59,3 +65,17 @@ def list_users():
         reader = csv.reader(file)
         students_csv = list(reader)
     return render_template('users/list_users.html', students=students_csv)
+
+@app.route("/search")
+def search():
+    search_query = request.args.get("query", None)
+    if search_query:
+        words = [word for word in WORDS if word.startswith(search_query)]
+        json_words = {
+            'data': words
+        }
+        return jsonify(json_words)
+    return render_template('search/index.html', words=[])
+
+if __name__ == '__main_':
+    app.run(debug=True, port=5000)
