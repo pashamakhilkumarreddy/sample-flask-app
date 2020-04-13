@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: 'NotoSans';
-  src: url("{{url_for('static', filename='fonts/NotoSans-Regular.ttf')}}");
+  src: url("/static/fonts/NotoSans-Regular.ttf");
 }
 
 body {
