@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, width=device-width">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bulma.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+  {% block title %} {% endblock %}
+</head>
+
+<body>
+  {% block header %}
+    {% include 'common/header.html' %}
+  {% endblock header %}
+  <main class="container">
+    {% block body %}
+    {% endblock %}
+  </main>
+  {% block footer %}
+    {% include 'common/footer.html' %}
+  {% endblock footer %}
+</body>
+
+</html>

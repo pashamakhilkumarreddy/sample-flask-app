@@ -1,0 +1,86 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'NotoSans';
+  src: url("{{url_for('static', filename='fonts/NotoSans-Regular.ttf')}}");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'NotoSans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  line-height: 1.5;
+  font-size: 16px;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  position: relative;
+  min-height: 100vh;
+}
+
+header {
+  height: 6vh;
+  border-bottom: 1px solid hsla(0, 0%, 47%, 0.7);
+  box-shadow: 0 2px 4px 0 hsla(0, 0%, 47%, 0.7);
+}
+
+.navbar-dropdown {
+  font-size: 1rem !important;
+}
+
+.auth-form {
+  border: 1px solid #d7d7d7;
+  border-radius: 5px;
+  padding: 2rem 3rem;
+  -webkit-box-shadow: 0 10px 15px -5px rgba(119, 119, 119, 0.7);
+  -moz-box-shadow: 0 10px 15px -5px rgba(119, 119, 119, 0.7);
+  box-shadow: 0 10px 15px -5px rgba(119, 119, 119, 0.7);
+}
+
+.auth-form .is-danger::before {
+  content: '';
+  display: inline-block;
+  background: url('/static/images/IconError.svg') no-repeat;
+  width: 1rem;
+  height: 1rem;
+  margin: 0 0.3rem 0 0;
+  vertical-align: text-bottom;
+}
+
+.auth-form .is-success::before {
+  content: '';
+  display: inline-block;
+  background: url('/static/images/IconSuccess.svg') no-repeat;
+  width: 20px;
+  height: 20px;
+  margin: 0 0.3rem 0 0;
+  vertical-align: bottom;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  padding: 2rem 1.5rem;
+  border-top: 1px solid #d7d7d7;
+  height: 9vh;
+}
+
+.mb-2 {
+  margin-bottom: 1rem;
+}
+
+.mt-10 {
+  margin-top: 5rem;
+}
+
+.help {
+  font-size: 0.9rem;
+}
