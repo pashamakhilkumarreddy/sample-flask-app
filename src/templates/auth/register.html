@@ -11,16 +11,22 @@
     <form action="/register" method="POST" class="auth-form">
       <h1 class="title is-1 has-text-centered">Register</h1>
       <div class="field">
+        <label for="register-name" class="label">Name</label>
+        <div class="control">
+          <input id="register-name" type="text" class="input" name="name" value="" placeholder="Please enter your name" required />
+        </div>
+      </div>
+      <div class="field">
         <label for="register-email" class="label">Email</label>
         <div class="control">
-          <input id="register-email" type="text" class="input" name="email" value="" placeholder="Please enter your email" />
+          <input id="register-email" type="email" class="input" name="email" value="" placeholder="Please enter your email" required />
         </div>
       </div>
       <div class="field">
         <label for="register-password" class="label">Password</label>
         <div class="control">
           <input id="register-password" type="password" class="input" name="password" value="" 
-          placeholder="Please enter your password" />
+          placeholder="Please enter your password" required />
         </div>
       </div>
       <div class="field">
